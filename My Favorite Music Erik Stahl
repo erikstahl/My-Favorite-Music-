@@ -1,0 +1,65 @@
+
+                
+//My Favorite Music
+//This is fun, you can down load your songs and play it with your app . Call product name "My Favorite Music " Save it in Desk Top Down load your music mp3 And add it in your Assetsxcassets Choose New Image Set Type Song 1 Choose image set Song 2 Choose image set Song 3 Grab your photos one by one and drag them to the squares.
+
+//Next step Bring audio Push "My Favorite Music " And drag each image to each mp3 song And drag them to your folder
+
+//If you push command + shift + o vowel You will see the window search Type view controller // // ViewControllerSwift // MyFavoriteMusic // import UIkit
+
+Class ViewController: UIViewController UITableViewDelgate, 
+@IbOutlet var table: UITableView !
+
+var songs = song
+
+Super ViewDidLoad () ConfigureSongs ()
+
+Table .delegate = self Table .dataSource = self
+
+Func ConfigureSongs() Songs.append(Song (Name: , "Imagine" ArtistName: "John Lenon" TrackName: "Song3"))
+
+(Name: , "Let it be" ArtistName: "Beatles" TrackName: "Song2"))
+
+(Name: , "Don't Let Me Down" ArtistName: "Beatles" TrackName: "Song1")) // Table Func tableView(_tableView: UITableView, .numberOfRowsInSection Section: Int) return songs.Count
+
+Func tableView (_tableView: UItableView, CellForRowAt indexPath: IndexPath)
+
+Let cell = tableView.dequeueReusableCell Let song = songs[ indexPath.row]
+
+(withIdentifier: 
+//Configuration 
+Cell.textLabel?.text = song.name Cell.detailTextLabel?.text =song.albumName "Cell", for: indexPath) Cell.accesoryType = .disclosureIndicator Cell.imageView?.image = UIImage (named:song.image.Name) Cell.textLabel?.font = UIFont (name: "rock", size:18) Cell.textLabel?.font = UIFont (name: "pop", size:17)
+
+return cell Func tableView (_tableView:UITableView,didSelectRowAt indexPath: IndexPath)
+
+tableView.deselectedRow (at: indexPath, animated: true)
+
+//present the player 
+Let position = indexPath.row.songs guard let vc= storyboard?.instantViewController (identifier: "player") as ? PlayerViewController else { return vc. Songs = position vc . Position = Position present (vc,animated: true)
+
+Struct song let artistName: string let trackName: string let imageName: string
+
+// go to main story board and search ViewController Call it MainStoryBoard
+
+//Push editor , then Embed in, then Navigation Controller and go style default and choose translucent , prefer large title
+
+//You see now 2 iPhone Now choose navigation item Title music Push + Bring UITableView on the screen . Then in your Table View prototype drag Prorotype cell 1 table view, add new constraints all of them 0 zero . Then go back to our view controller. And now we need to make the player . You know to play the music in your iPod . Go to your files Click "My Favorite Music" Then new file in Cocoa Touch Class Choose Class:playerViewController Subclass of:
+
+ class PlayerViewController: UIViewController public car position: Int = 0 public var songs: [song] = [ ] @IBOutlet var holder: UIView!
+
+Override func ViewDidLoad () Super.ViewDidLoad () Override func ViewDidLayoutSubviews() Super.ViewDidLayoutSubviews () If holder.subviews.count == 1 { Configure () func Configure () // set up user interface element then go search view window and look for UIViewController and push + Choose Prototype title cell Go to main StoryBoard push the symbol that looks like a square tv Push custom class and choose PlayerViewController And choose Inherit Module For the identity StoryBoard id Player And create another UIViewController and choose userinerit and in 4 corners 0 zero like before . Then drag it to player view controller Choose trigger segues Manual Outlet
+
+So now you can run your xcode and enjoy your music .
+
+© 2020 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
